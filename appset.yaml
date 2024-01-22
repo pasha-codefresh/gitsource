@@ -4,6 +4,8 @@ metadata:
   name: example-appset-v7
   namespace: argocd
 spec:
+  syncPolicy:
+     preserveResourcesOnDeletion: true
   generators:
     - list:
         elements:
