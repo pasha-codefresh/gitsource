@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: example-appset-v3
+  name: example-appset-v4
   namespace: argocd
 spec:
   generators:
