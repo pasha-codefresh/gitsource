@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: example-appset-v7
+  name: example-appset-v8
   namespace: argocd
 spec:
   syncPolicy:
