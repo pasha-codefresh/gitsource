@@ -6,9 +6,7 @@ metadata:
 spec:
   syncPolicy:
      preserveResourcesOnDeletion: true
-     automated:
-        allowEmpty: true
-        prune: false
+     applicationsSync: "create-update"
   generators:
     - list:
         elements:
