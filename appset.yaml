@@ -1,39 +1,29 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: example-appset-v7
+  name: guestbook
   namespace: argocd
 spec:
-  syncPolicy:
-     # preserveResourcesOnDeletion: true
-     applicationsSync: "create-update"
   generators:
-    - list:
-        elements:
-        - wave: "1"
-          path: guestbook
-          namespace: golist
-          name: app1
-        - wave: "2"
-          path: guestbook
-          namespace: default
-          name: app2
+    - git:
+        repoURL: 'https://github.com/yourusername/my-monorepo.git'
+        targetRevision: HEAD
+        paths:
+          - apps/guestbook
   template:
     metadata:
-      name: "{{name}}"
-      namespace: argocd
-      annotations:
-        argocd.argoproj.io/sync-wave: "{{wave}}"
+      labels:
+        app.kubernetes.io/instance: "{{name}}"
     spec:
-      destination:
-        server: "https://kubernetes.default.svc"
-        namespace: "{{namespace}}"
       project: default
       source:
-        repoURL: https://github.com/pasha-codefresh/argocd-example-apps
-        targetRevision: master
-        path: "{{path}}"
+        repoURL: 'https://github.com/yourusername/my-monorepo.git'
+        path: "{{name}}"
+        targetRevision: HEAD
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: default
       syncPolicy:
         automated:
-          selfHeal: true
           prune: true
+          selfHeal: true
