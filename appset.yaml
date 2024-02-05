@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: 'https://github.com/yourusername/my-monorepo.git'
+        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
         targetRevision: HEAD
         paths:
           - apps/guestbook
@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/yourusername/my-monorepo.git'
+        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
         path: "{{name}}"
         targetRevision: HEAD
       destination:
