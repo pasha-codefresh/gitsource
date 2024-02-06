@@ -28,10 +28,10 @@ spec:
         targetRevision: HEAD
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: 'guestbook'
+        namespace: '{{.path.basename}}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
         automated:
           prune: true
-          selfHeal: true
+#          selfHeal: true
