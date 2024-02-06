@@ -7,7 +7,7 @@ spec:
   generators:
     - git:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
-        targetRevision: HEAD
+        revision: HEAD
         paths:
           - apps/guestbook
   template:
