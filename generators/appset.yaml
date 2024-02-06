@@ -8,8 +8,8 @@ spec:
     - git:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
         revision: HEAD
-        paths:
-          - apps/guestbook
+        directories:
+          - path: apps/guestbook
   template:
     metadata:
       labels:
