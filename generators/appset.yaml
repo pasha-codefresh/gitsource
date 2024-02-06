@@ -25,8 +25,10 @@ spec:
         targetRevision: HEAD
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: default
+        namespace: '{{.path.basename}}'
       syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
         automated:
           prune: true
           selfHeal: true
