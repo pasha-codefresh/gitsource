@@ -17,6 +17,9 @@ spec:
       name: '{{.path.basename}}'
       labels:
         app.kubernetes.io/instance: "{{.path.basename}}"
+      annotations:
+        # resolves to the 'guestbook' directory
+        argocd.argoproj.io/manifest-generate-paths: .
     spec:
       project: default
       source:
