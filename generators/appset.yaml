@@ -4,6 +4,8 @@ metadata:
   name: guestbook
   namespace: argocd
 spec:
+  goTemplate: true
+  goTemplateOptions: [ "missingkey=error" ]
   generators:
     - git:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
