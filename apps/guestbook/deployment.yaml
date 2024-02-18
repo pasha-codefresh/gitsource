@@ -21,3 +21,5 @@ spec:
           env:
             - name: ENV_VAR_1
               value: value1
+            - name: ENV_VAR_2
+              value: value1
