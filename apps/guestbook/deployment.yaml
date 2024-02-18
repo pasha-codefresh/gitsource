@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: 2
+  replicas: 3
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -22,4 +22,6 @@ spec:
             - name: ENV_VAR_1
               value: value1
             - name: ENV_VAR_2
+              value: value1
+            - name: ENV_VAR_3
               value: value1
