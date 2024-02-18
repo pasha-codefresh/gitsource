@@ -21,6 +21,11 @@ spec:
         # resolves to the 'guestbook' directory
 #        argocd.argoproj.io/manifest-generate-paths: .
     spec:
+      ignoreDifferences:
+        - group: apps
+          jsonPointers:
+            - /spec/replicas
+          kind: Deployment
       project: default
       source:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
