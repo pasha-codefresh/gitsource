@@ -15,14 +15,14 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-        - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
           name: guestbook-ui
           ports:
             - containerPort: 80
           env:
             - name: ENV_VAR_7
               value: value1
-            - name: ENV_VAR_12
+            - name: ENV_VAR_13
               value: value1
             # - name: ENV_VAR_3
             #   value: value1
