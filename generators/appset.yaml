@@ -40,4 +40,4 @@ spec:
           - ServerSideApply=true
         automated:
           prune: true
-          # selfHeal: true
+          selfHeal: true
