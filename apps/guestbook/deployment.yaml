@@ -22,7 +22,7 @@ spec:
           env:
             - name: ENV_VAR_20
               value: value1
-            - name: ENV_VAR_16
+            - name: ENV_VAR_17
               value: value1
             # - name: ENV_VAR_3
             #   value: value1
