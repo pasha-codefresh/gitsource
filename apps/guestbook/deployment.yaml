@@ -20,7 +20,7 @@ spec:
           ports:
             - containerPort: 80
           env:
-            - name: ENV_VAR_19
+            - name: ENV_VAR_20
               value: value1
             - name: ENV_VAR_15
               value: value1
