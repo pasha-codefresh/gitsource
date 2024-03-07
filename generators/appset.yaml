@@ -20,6 +20,7 @@ spec:
       annotations:
         # resolves to the 'guestbook' directory
         argocd.argoproj.io/manifest-generate-paths: .
+        argocd.argoproj.io/sync-options: TerminateOnNewSync=true
     spec:
       ignoreDifferences:
         - group: apps
