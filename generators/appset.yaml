@@ -22,6 +22,7 @@ spec:
         argocd.argoproj.io/manifest-generate-paths: .
         argocd.argoproj.io/sync-options: TerminateOnNewSync=true
     spec:
+      project: dev
       ignoreDifferences:
         - group: apps
           jsonPointers:
