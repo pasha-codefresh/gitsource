@@ -13,7 +13,7 @@ spec:
   destination:
     namespace: gb-restricted
     server: https://kubernetes.default.svc
-  project: demo
+  project: dev
   source:
     path: apps/guestbook2
     repoURL: https://github.com/pasha-codefresh/precisely-gitsource.git
