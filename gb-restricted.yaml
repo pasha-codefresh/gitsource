@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: .
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  labels:
+    app.kubernetes.io/instance: guestbook2
+  name: gb-restricted
+  namespace: argocd
+spec:
+  destination:
+    namespace: gb-restricted
+    server: https://kubernetes.default.svc
+  project: dev
+  source:
+    path: apps/guestbook2
+    repoURL: https://github.com/pasha-codefresh/precisely-gitsource.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
