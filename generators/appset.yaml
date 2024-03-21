@@ -28,7 +28,6 @@ spec:
           jsonPointers:
             - /spec/replicas
           kind: Deployment
-      project: default
       source:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
         path: "{{.path.path}}"
