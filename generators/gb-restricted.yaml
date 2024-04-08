@@ -11,7 +11,7 @@ metadata:
   namespace: cf-test
 spec:
   destination:
-    namespace: gb-restricted
+    namespace: cf-test
     server: https://kubernetes.default.svc
   project: demo
   source:
