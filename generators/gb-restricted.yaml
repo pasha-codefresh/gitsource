@@ -19,7 +19,7 @@ spec:
     repoURL: https://github.com/pasha-codefresh/precisely-gitsource.git
     targetRevision: HEAD
   syncPolicy:
-    automated:
-      prune: true
+    # automated:
+    #   prune: true
     syncOptions:
     - CreateNamespace=true
