@@ -8,7 +8,7 @@ metadata:
   labels:
     app.kubernetes.io/instance: guestbook2
   name: gb-restricted
-  namespace: argocd
+  namespace: cf-test
 spec:
   destination:
     namespace: gb-restricted
