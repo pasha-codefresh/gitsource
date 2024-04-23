@@ -11,8 +11,8 @@ spec:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
         revision: HEAD
         directories:
-#          - path: apps/*
-          - path: helm-apps/*
+          - path: apps/*
+#          - path: helm-apps/*
   template:
     metadata:
       name: '{{.path.basename}}'
