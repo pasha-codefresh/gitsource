@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: app-slack-notification-
+  name: before
   annotations:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -9,9 +9,8 @@ spec:
   template:
     spec:
       containers:
-        - name: slack-notification
-          image: curlimages/curl
-          command:
-            - "sleep 6000"
+        - name: sleep
+          image: alpine:latest
+          command: ["sleep", "100"]
       restartPolicy: Never
-  backoffLimit: 2
+  backoffLimit: 0
