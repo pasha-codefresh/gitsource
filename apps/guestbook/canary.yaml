@@ -10,6 +10,7 @@ metadata:
 spec:
   replicas: 5
   revisionHistoryLimit: 2
+  progressDeadlineSeconds: 60
   selector:
     matchLabels:
       app: rollout-canary
