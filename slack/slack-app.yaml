@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     notifications.argoproj.io/subscribe.on-deployed.slack: test_slack_plugin
-  name: guestbook
+  name: gb
   namespace: codefresh
 spec:
   project: default  # Replace with your desired ArgoCD project
