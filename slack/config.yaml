@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-notifications-cm
-  namespace: argocd
+  namespace: codefresh
 data:
   service.slack: |
     token: $slack-token
