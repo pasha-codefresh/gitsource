@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: kustomize-app
   namespace: codefresh
-  annotations:
-    argocd.argoproj.io/manifest-generate-paths: .
+#  annotations:
+#    argocd.argoproj.io/manifest-generate-paths: .
 spec:
   project: default  # Replace with your desired ArgoCD project
   source:
