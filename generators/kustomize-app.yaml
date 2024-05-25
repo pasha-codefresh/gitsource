@@ -5,6 +5,7 @@ metadata:
   namespace: codefresh
   annotations:
     argocd.argoproj.io/manifest-generate-paths: .; ../kustomize-resources
+    argocd-image-updater.argoproj.io/image-list: gcr.io/heptio-images/ks-guestbook-demo:^0.1
 spec:
   project: default  # Replace with your desired ArgoCD project
   source:
