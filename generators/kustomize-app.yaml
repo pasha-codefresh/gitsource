@@ -12,6 +12,15 @@ spec:
     repoURL: https://github.com/pasha-codefresh/precisely-gitsource
     targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
     path: ./kustomize
+    kustomize:
+      patches:
+        - target:
+            kind: Deployment
+            name: guestbook-ui
+          patch: |-
+            - op: replace
+              path: /spec/template/spec/containers/0/ports/0/containerPort
+              value: 443
   destination:
     server: https://kubernetes.default.svc  # Replace with your Kubernetes cluster API URL
     namespace: default
