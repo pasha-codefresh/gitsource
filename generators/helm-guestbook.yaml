@@ -4,9 +4,8 @@ metadata:
   name: helm-guestbook
   namespace: codefresh
   annotations:
-    argocd-image-updater.argoproj.io/image-list: test=gcr.io/heptio-images/ks-guestbook-demo
+    argocd-image-updater.argoproj.io/image-list: gcr.io/heptio-images/ks-guestbook-demo:~0.1
     argocd-image-updater.argoproj.io/write-back-method: git
-    argocd-image-updater.argoproj.io/test.update-strategy: newest-build
 spec:
   project: default  # Replace with your desired ArgoCD project
   source:
