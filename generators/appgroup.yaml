@@ -1,11 +1,11 @@
-apiVersion: argoproj.io/v1alpha1
-kind: ApplicationGroup
-metadata:
-  annotations:
-    argocd.argoproj.io/tracking-id: gs:argoproj.io/Application:codefresh/helm-guestbook
-  labels:
-    app.kubernetes.io/instance: gs
-  name: pasha-test-appgroup
-  namespace: codefresh
-  finalizers: 
-  - resources-finalizer.argocd.argoproj.io
+#apiVersion: argoproj.io/v1alpha1
+#kind: ApplicationGroup
+#metadata:
+#  annotations:
+#    argocd.argoproj.io/tracking-id: gs:argoproj.io/Application:codefresh/helm-guestbook
+#  labels:
+#    app.kubernetes.io/instance: gs
+#  name: pasha-test-appgroup
+#  namespace: codefresh
+#  finalizers:
+#  - resources-finalizer.argocd.argoproj.io
