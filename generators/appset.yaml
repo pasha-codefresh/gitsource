@@ -37,6 +37,7 @@ spec:
         server: 'https://kubernetes.default.svc'
         namespace: '{{.path.basename}}'
       syncPolicy:
+        preserveResourcesOnDeletion: true
         syncOptions:
           - CreateNamespace=true
           # - ServerSideApply=true
