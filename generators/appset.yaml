@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: guestbook2
   namespace: codefresh
 spec:
   goTemplate: true
@@ -13,8 +13,8 @@ spec:
         directories:
           - path: apps/*
 #          - path: helm-apps/*
-  syncPolicy:
-    preserveResourcesOnDeletion: true
+#  syncPolicy:
+#    preserveResourcesOnDeletion: true
   template:
     metadata:
       name: '{{.path.basename}}'
