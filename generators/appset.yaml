@@ -13,8 +13,8 @@ spec:
         directories:
           - path: apps/*
 #          - path: helm-apps/*
-  syncPolicy:
-    preserveResourcesOnDeletion: true
+#  syncPolicy:
+#    preserveResourcesOnDeletion: true
   template:
     metadata:
       name: '{{.path.basename}}'
