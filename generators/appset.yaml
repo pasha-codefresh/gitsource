@@ -13,6 +13,8 @@ spec:
         directories:
           - path: apps/*
 #          - path: helm-apps/*
+  syncPolicy:
+    preserveResourcesOnDeletion: true
   template:
     metadata:
       name: '{{.path.basename}}'
@@ -37,7 +39,6 @@ spec:
         server: 'https://kubernetes.default.svc'
         namespace: '{{.path.basename}}'
       syncPolicy:
-        preserveResourcesOnDeletion: true
         syncOptions:
           - CreateNamespace=true
           # - ServerSideApply=true
