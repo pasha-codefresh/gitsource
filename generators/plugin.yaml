@@ -12,9 +12,9 @@ metadata:
 spec:
   project: default  # Replace with your desired ArgoCD project
   source:
-    repoURL: https://github.com/pasha-codefresh/precisely-gitsource
-    targetRevision: main  # Replace with the target revision (commit, tag, or branch)
-    path: ./helm-apps/helm-guestbook
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
+    path: guestbook
     plugin:
       name: my-plugin-config-v1.0
       env:
