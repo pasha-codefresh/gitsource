@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
     path: guestbook
     plugin:
-      name: my-plugin-config-v1.0
+      name: my-plugin-v1.0
       env:
         - name: SERVICE
           value: my-service
