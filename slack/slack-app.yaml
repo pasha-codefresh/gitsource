@@ -14,7 +14,7 @@ spec:
     targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
     path: guestbook
   destination:
-    name: kind-test-1 # Replace with your Kubernetes cluster API URL
+    name: arn:aws:eks:us-east-1:454353560595:cluster/pasha-argocd # Replace with your Kubernetes cluster API URL
     namespace: default
   syncPolicy:
     syncOptions:
