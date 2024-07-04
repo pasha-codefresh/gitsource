@@ -14,7 +14,7 @@ spec:
     targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
     path: guestbook
   destination:
-    server: https://kubernetes.default.svc  # Replace with your Kubernetes cluster API URL
+    name: kind-test-1 # Replace with your Kubernetes cluster API URL
     namespace: default
   syncPolicy:
     syncOptions:
