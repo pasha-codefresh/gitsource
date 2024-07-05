@@ -3,6 +3,7 @@ kind: Application
 metadata:
   annotations:
     notifications.argoproj.io/subscribe.on-deployed.slack: test_slack_plugin
+    argocd.argoproj.io/manifest-generate-paths: .
   name: gb
   namespace: argocd
   finalizers:
