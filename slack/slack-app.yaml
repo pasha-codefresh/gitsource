@@ -6,8 +6,8 @@ metadata:
     argocd.argoproj.io/manifest-generate-paths: .
   name: gb
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+#  finalizers:
+#    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default  # Replace with your desired ArgoCD project
   source:
