@@ -4,8 +4,8 @@ metadata:
   name: listgenerator
   namespace: argocd
 spec:
-  #  syncPolicy:
-  #    preserveResourcesOnDeletion: true
+  syncPolicy:
+    preserveResourcesOnDeletion: true
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
@@ -16,6 +16,7 @@ spec:
             namespace: cf
           - cluster: kind-test-1
             url: https://kubernetes.default.svc
+            namespace: octopus
   template:
     metadata:
       name: '{{.cluster}}-guestbook-listgenerator'
