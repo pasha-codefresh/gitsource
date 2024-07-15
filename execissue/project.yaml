@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: test
+  namespace: argocd
+spec:
+  sourceRepos:
+    - https://github.com/ClownandBox/argocd-lab.git
+  destinations:
+    - name: in-cluster
+      namespace: test
+      server: https://kubernetes.default.svc
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: Role
+    - group: '*'
+      kind: RoleBinding
+    - group: '*'
+      kind: ServiceAccount
+    - group: '*'
+      kind: Pod

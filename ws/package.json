@@ -1,0 +1,17 @@
+{
+  "name": "websocket-client",
+  "version": "1.0.0",
+  "description": "A simple WebSocket client",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
+  },
+  "dependencies": {
+    "ws": "^8.5.0"
+  },
+  "devDependencies": {
+  },
+  "author": "",
+  "license": "ISC"
+}
