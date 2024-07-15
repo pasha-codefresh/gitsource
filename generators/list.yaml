@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: listgenerator
   namespace: argocd
 spec:
   goTemplate: true
@@ -19,7 +19,7 @@ spec:
     spec:
       project: "default"
       source:
-        repoURL: https://github.com/argoproj/argo-cd.git
+        repoURL: https://github.com/pasha-codefresh/precisely-gitsource
         targetRevision: HEAD
         path: apps/guestbook
       destination:
