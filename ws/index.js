@@ -3,7 +3,7 @@ const WebSocket = require('ws');
 const ws = new WebSocket('ws://ab73b4b8640284470834463903f3667f-1857913852.us-east-1.elb.amazonaws.com/terminal?pod=guestbook-ui-696ff46b84-m47kf&container=guestbook-ui&appName=guestbook&appNamespace=argocd&projectName=default&namespace=guestbook',
     {
         headers: {
-            'Cookie': 'argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjpsb2dpbiIsImV4cCI6MTcyMDg4MTAyNywibmJmIjoxNzIwNzk0NjI3LCJpYXQiOjE3MjA3OTQ2MjcsImp0aSI6IjY0ZWFiZTUzLTFmZWMtNGFhYy1hODE3LWQyMDU1M2Q1ZWEzYSJ9.ympMUydLwpz9Q2JA680e3at1LLoj0oU7R7e3KDadr5M',
+            'Cookie': 'argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjpsb2dpbiIsImV4cCI6MTcyMTIyODU0MSwibmJmIjoxNzIxMTQyMTQxLCJpYXQiOjE3MjExNDIxNDEsImp0aSI6ImQwZDNmMzY1LTgyMzUtNGQ5YS05MmFlLWZhODk2YzY4NzUyOSJ9.D2Jfji-FEYy3eHWas85hWUTwttCm8C1N79lLdZAJiu4',
         },
         rejectUnauthorized: false,
     });
