@@ -5,7 +5,7 @@ metadata:
 #  namespace: guestbook
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
+  revisionHistoryLimit:
   selector:
     matchLabels:
       app: guestbook-ui
@@ -19,3 +19,8 @@ spec:
           name: guestbook-ui
           ports:
             - containerPort: 80
+          env:
+            - name: ENV_VAR_22
+              value: value2
+            - name: ENV_VAR_19
+              value: value2
