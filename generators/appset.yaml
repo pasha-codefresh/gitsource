@@ -31,11 +31,11 @@ spec:
             - /spec/replicas
           kind: Deployment
       source:
-        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource-broken.git'
+        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
         path: "{{.path.path}}"
         targetRevision: HEAD
       destination:
-        server: 'https://kubernetes.default.svc'
+        server: 'https://kubernetes.default.svct'
         namespace: '{{.path.basename}}'
       syncPolicy:
         syncOptions:
