@@ -31,7 +31,7 @@ spec:
             - /spec/replicas
           kind: Deployment
       source:
-        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
+        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource-broken.git'
         path: "{{.path.path}}"
         targetRevision: HEAD
       destination:
