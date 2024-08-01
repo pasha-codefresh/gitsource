@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: guestbook2
-  namespace: argocd
+  namespace: codefresh
 spec:
   goTemplate: true
   goTemplateOptions: [ "missingkey=error" ]
