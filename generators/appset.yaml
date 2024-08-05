@@ -7,19 +7,33 @@ spec:
   goTemplate: true
   goTemplateOptions: [ "missingkey=error" ]
   generators:
-    - git:
-        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
-        revision: HEAD
-        directories:
-          - path: apps/*
+    - list:
+        elements:
+          - basename: guestbook
+            path: apps/guestbook
+            namespace: guestbook
+            url: https://pasha-oss-dest-1-vcluster.rnd-sandbox.cf-infra.com
+          - basename: guestbook2
+            path: apps/guestbook2
+            namespace: guestbook
+            url: https://pasha-oss-dest-2-vcluster.rnd-sandbox.cf-infra.com
+          - basename: guestbook3
+            path: apps/guestbook3
+            namespace: guestbook
+            url: https://pasha-oss-dest-3-vcluster.rnd-sandbox.cf-infra.com
+#    - git:
+#        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
+#        revision: HEAD
+#        directories:
+#          - path: apps/*
 #          - path: helm-apps/*
 #  syncPolicy:
 #    preserveResourcesOnDeletion: true
   template:
     metadata:
-      name: '{{.path.basename}}'
+      name: '{{.basename}}'
       labels:
-        app.kubernetes.io/instance: "{{.path.basename}}"
+        app.kubernetes.io/instance: "{{.basename}}"
       annotations:
         # resolves to the 'guestbook' directory
         argocd.argoproj.io/manifest-generate-paths: .
@@ -32,11 +46,11 @@ spec:
           kind: Deployment
       source:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
-        path: "{{.path.path}}"
+        path: "{{.path}}"
         targetRevision: HEAD
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: '{{.path.basename}}'
+        namespace: '{{.namespace}}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
