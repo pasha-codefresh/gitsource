@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook2
+  name: gb-appset
   namespace: argocd
 spec:
   goTemplate: true
@@ -49,7 +49,7 @@ spec:
         path: "{{.path}}"
         targetRevision: HEAD
       destination:
-        server: 'https://kubernetes.default.svc'
+        server: '{{.url}}'
         namespace: '{{.namespace}}'
       syncPolicy:
         syncOptions:
