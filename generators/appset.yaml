@@ -12,15 +12,15 @@ spec:
           - basename: guestbook
             path: apps/guestbook
             namespace: guestbook
-            url: https://pasha-oss-dest-1-vcluster.rnd-sandbox.cf-infra.com
+            url: https://kubernetes.default.svc
           - basename: guestbook2
             path: apps/guestbook2
             namespace: guestbook
-            url: https://pasha-oss-dest-2-vcluster.rnd-sandbox.cf-infra.com
+            url: https://kubernetes.default.svc
           - basename: guestbook3
             path: apps/guestbook3
             namespace: guestbook
-            url: https://pasha-oss-dest-3-vcluster.rnd-sandbox.cf-infra.com
+            url: https://kubernetes.default.svc
 #    - git:
 #        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
 #        revision: HEAD
