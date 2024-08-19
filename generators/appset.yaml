@@ -2,41 +2,27 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: gb-appset
-  namespace: argocd
 spec:
   goTemplate: true
   goTemplateOptions: [ "missingkey=error" ]
   generators:
-    - list:
-        elements:
-          - basename: guestbook
-            path: apps/guestbook
-            namespace: guestbook
-            url: https://kubernetes.default.svc
-          - basename: guestbook2
-            path: apps/guestbook2
-            namespace: guestbook
-            url: https://kubernetes.default.svc
-          - basename: guestbook3
-            path: apps/guestbook3
-            namespace: guestbook
-            url: https://kubernetes.default.svc
-#    - git:
-#        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
-#        revision: HEAD
-#        directories:
-#          - path: apps/*
-#          - path: helm-apps/*
-#  syncPolicy:
-#    preserveResourcesOnDeletion: true
+    - git:
+        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
+        revision: HEAD
+        directories:
+          - path: apps/*
+  #          - path: helm-apps/*
+  #  syncPolicy:
+  #    preserveResourcesOnDeletion: true
   template:
     metadata:
-      name: '{{.basename}}'
+      name: '{{.path.basename}}'
       labels:
-        app.kubernetes.io/instance: "{{.basename}}"
+        app.kubernetes.io/instance: "{{.path.basename}}"
       annotations:
         # resolves to the 'guestbook' directory
         argocd.argoproj.io/manifest-generate-paths: .
+        argocd.argoproj.io/sync-options: TerminateOnNewSync=true
     spec:
       project: default
       ignoreDifferences:
@@ -46,15 +32,15 @@ spec:
           kind: Deployment
       source:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
-        path: "{{.path}}"
+        path: "{{.path.path}}"
         targetRevision: HEAD
       destination:
-        server: '{{.url}}'
-        namespace: '{{.namespace}}'
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{.path.basename}}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
           # - ServerSideApply=true
         automated:
           prune: true
-        #  selfHeal: true
+          selfHeal: true
