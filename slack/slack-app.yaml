@@ -15,7 +15,7 @@ spec:
     targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
     path: guestbook
   destination:
-    name: in-cluster # Replace with your Kubernetes cluster API URL
+    name: kubernetes-admin@pasha-oss-dest-1 # Replace with your Kubernetes cluster API URL
     namespace: default
   syncPolicy:
     syncOptions:
