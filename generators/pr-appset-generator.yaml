@@ -13,7 +13,7 @@ spec:
           tokenRef:
             secretName: github-token
             key: token
-          appSecretName: github-app-repo-creds
+          appSecretName: argocd-secret
         requeueAfterSeconds: 1800
   template:
     metadata:
