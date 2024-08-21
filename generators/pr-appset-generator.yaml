@@ -11,9 +11,8 @@ spec:
           owner: myorg
           repo: myrepository
           tokenRef:
-            secretName: github-token
+            secretName: argocd-secret
             key: token
-          appSecretName: argocd-secret
         requeueAfterSeconds: 1800
   template:
     metadata:
