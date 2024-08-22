@@ -1,46 +1,46 @@
-apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
-metadata:
-  name: pr-generator
-spec:
-  goTemplate: true
-  goTemplateOptions: ["missingkey=error"]
-  generators:
-    - pullRequest:
-        github:
-          owner: myorg
-          repo: myrepository
-          tokenRef:
-            secretName: argocd-secret
-            key: admin.password
-        requeueAfterSeconds: 1800
-  template:
-    metadata:
-      name: '{{.path.basename}}'
-      labels:
-        app.kubernetes.io/instance: "{{.path.basename}}"
-      annotations:
-        # resolves to the 'guestbook' directory
-        argocd.argoproj.io/manifest-generate-paths: .
-        argocd.argoproj.io/sync-options: TerminateOnNewSync=true
-    spec:
-      project: default
-      ignoreDifferences:
-        - group: apps
-          jsonPointers:
-            - /spec/replicas
-          kind: Deployment
-      source:
-        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
-        path: "{{.path.path}}"
-        targetRevision: HEAD
-      destination:
-        server: 'https://kubernetes.default.svc'
-        namespace: '{{.path.basename}}'
-      syncPolicy:
-        syncOptions:
-          - CreateNamespace=true
-          # - ServerSideApply=true
-        automated:
-          prune: true
-          # selfHeal: true
+#apiVersion: argoproj.io/v1alpha1
+#kind: ApplicationSet
+#metadata:
+#  name: pr-generator
+#spec:
+#  goTemplate: true
+#  goTemplateOptions: ["missingkey=error"]
+#  generators:
+#    - pullRequest:
+#        github:
+#          owner: myorg
+#          repo: myrepository
+#          tokenRef:
+#            secretName: argocd-secret
+#            key: admin.password
+#        requeueAfterSeconds: 1800
+#  template:
+#    metadata:
+#      name: '{{.path.basename}}'
+#      labels:
+#        app.kubernetes.io/instance: "{{.path.basename}}"
+#      annotations:
+#        # resolves to the 'guestbook' directory
+#        argocd.argoproj.io/manifest-generate-paths: .
+#        argocd.argoproj.io/sync-options: TerminateOnNewSync=true
+#    spec:
+#      project: default
+#      ignoreDifferences:
+#        - group: apps
+#          jsonPointers:
+#            - /spec/replicas
+#          kind: Deployment
+#      source:
+#        repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
+#        path: "{{.path.path}}"
+#        targetRevision: HEAD
+#      destination:
+#        server: 'https://kubernetes.default.svc'
+#        namespace: '{{.path.basename}}'
+#      syncPolicy:
+#        syncOptions:
+#          - CreateNamespace=true
+#          # - ServerSideApply=true
+#        automated:
+#          prune: true
+#          # selfHeal: true
