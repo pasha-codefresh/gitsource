@@ -48,3 +48,7 @@ spec:
       destination:
         server: '{{.url}}'
         namespace: '{{.ns}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
