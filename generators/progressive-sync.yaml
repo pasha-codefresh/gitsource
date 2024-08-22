@@ -43,7 +43,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
-        targetRevision: HEAD
+        targetRevision: main
         path: '{{.path}}'
       destination:
         server: '{{.url}}'
