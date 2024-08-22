@@ -25,13 +25,13 @@ spec:
               operator: In
               values:
                 - env-dev
-          maxUpdate: 50%
+          maxUpdate: 100%
         - matchExpressions:
             - key: envLabel
               operator: In
               values:
                 - env-qa
-          maxUpdate: 50%
+          maxUpdate: 100%
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   template:
