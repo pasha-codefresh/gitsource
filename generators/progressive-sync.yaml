@@ -16,22 +16,22 @@ spec:
             env: env-qa
             path: apps/guestbook2
             ns: guestbook2
-  strategy:
-    type: RollingSync
-    rollingSync:
-      steps:
-        - matchExpressions:
-            - key: envLabel
-              operator: In
-              values:
-                - env-dev
-          maxUpdate: 50%
-        - matchExpressions:
-            - key: envLabel
-              operator: In
-              values:
-                - env-qa
-          maxUpdate: 50%
+#  strategy:
+#    type: RollingSync
+#    rollingSync:
+#      steps:
+#        - matchExpressions:
+#            - key: envLabel
+#              operator: In
+#              values:
+#                - env-dev
+#          maxUpdate: 50%
+#        - matchExpressions:
+#            - key: envLabel
+#              operator: In
+#              values:
+#                - env-qa
+#          maxUpdate: 50%
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   template:
