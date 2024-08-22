@@ -44,7 +44,7 @@ spec:
       source:
         repoURL: 'https://github.com/pasha-codefresh/precisely-gitsource.git'
         targetRevision: HEAD
-        path: {{ .path }}
+        path: {{.path}}
       destination:
         server: '{{.url}}'
         namespace: '{{.ns}}'
