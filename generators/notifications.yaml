@@ -6,7 +6,7 @@ metadata:
 #  finalizers:
 #    - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default  # Replace with your desired ArgoCD project
+  project: cf  # Replace with your desired ArgoCD project
   source:
     repoURL: https://github.com/pasha-codefresh/precisely-gitsource
     targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
