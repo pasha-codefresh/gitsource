@@ -17,6 +17,7 @@ spec:
   template:
     metadata:
       name: '{{.path.basename}}'
+      namespace: cf-argocd
       labels:
         app.kubernetes.io/instance: "{{.path.basename}}"
       annotations:
