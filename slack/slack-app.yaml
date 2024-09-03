@@ -5,7 +5,7 @@ metadata:
     notifications.argoproj.io/subscribe.on-deployed.slack: test_slack_plugin
     argocd.argoproj.io/manifest-generate-paths: .
   name: gb
-  namespace: argocd
+  namespace: cf-argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -15,7 +15,7 @@ spec:
     targetRevision: HEAD  # Replace with the target revision (commit, tag, or branch)
     path: guestbook
   destination:
-    name: kubernetes-admin@pasha-oss-dest-1 # Replace with your Kubernetes cluster API URL
+    name: https://kubernetes.default.svc # Replace with your Kubernetes cluster API URL
     namespace: default
   syncPolicy:
     syncOptions:
