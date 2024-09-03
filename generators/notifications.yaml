@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: notification
-  namespace: argocd
+  namespace: cf-argocd
 #  finalizers:
 #    - resources-finalizer.argocd.argoproj.io
 spec:
