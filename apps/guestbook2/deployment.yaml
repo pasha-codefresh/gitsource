@@ -23,4 +23,4 @@ spec:
             - name: ENV_VAR_22
               value: value2
             - name: ENV_VAR_19
-              value: value2
+              value: value3
