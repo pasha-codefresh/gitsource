@@ -24,6 +24,7 @@ spec:
         # resolves to the 'guestbook' directory
         argocd.argoproj.io/manifest-generate-paths: .
         argocd.argoproj.io/sync-options: TerminateOnNewSync=true
+        notifications.argoproj.io/subscribe.on-deployed.slack: test_slack_plugin
     spec:
       project: default
       ignoreDifferences:
