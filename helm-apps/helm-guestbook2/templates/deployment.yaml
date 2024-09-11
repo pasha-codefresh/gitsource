@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:0.1"
+          image: "gcr.io/heptio-images/ks-guestbook-demo:0.2"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
