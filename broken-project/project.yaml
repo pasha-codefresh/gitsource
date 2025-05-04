@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  name: guestbook-project
+spec:
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  destinations:
+    - namespace: helm-guestbook
+      server: "*"
+  sourceRepos:
+    - "*"
