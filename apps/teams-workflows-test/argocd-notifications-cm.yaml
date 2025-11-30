@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-notifications-cm
+  namespace: argocd
+data:
+  service.teams-workflows: |
+    recipientUrls:
+      channelName: $channel-workflows-url
+

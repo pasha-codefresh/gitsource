@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: teams-workflows-test
+  namespace: argocd
+  annotations:
+    # Teams Workflows notification subscriptions
+    # The recipient 'channelName' must match a key in the recipientUrls map in argocd-notifications-cm
+    notifications.argoproj.io/subscribe.on-sync-succeeded.teams-workflows: channelName
+    notifications.argoproj.io/subscribe.on-sync-failed.teams-workflows: channelName
+    notifications.argoproj.io/subscribe.on-health-degraded.teams-workflows: channelName
+    notifications.argoproj.io/subscribe.on-deployed.teams-workflows: channelName
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pasha-codefresh/precisely-gitsource
+    targetRevision: HEAD
+    path: apps/teams-workflows-test
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: teams-workflows-test
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+
